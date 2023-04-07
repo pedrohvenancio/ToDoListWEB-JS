@@ -14,20 +14,26 @@ inputBtn.addEventListener( 'click', function enviar(){
 
     let task = document.createElement("p");
     task.innerHTML = input.value;
-    task.style.cssText = "fontSize: 24px;";
-    newTask.appendChild(task);
+    task.style.cssText = "fontSize: 20px;";
+
+    let divTask = document.createElement('div');
+    divTask.classList.add('pDiv')
+    divTask.appendChild(task)
+    newTask.appendChild(divTask);
 
     let complete = document.createElement("button");
     complete.innerHTML = `<span>&#10004</span>`;
     complete.addEventListener('click', function(){
         taskDiv.removeChild(newTask);
     });
+    complete.classList.add('btn');
 
     let remove = document.createElement("button");
     remove.innerHTML = `<span>&#10006</span>`;
     remove.addEventListener('click', function(){
         taskDiv.removeChild(newTask);
     });
+    remove.classList.add('btn');
 
     let divBtn = document.createElement("div");
     divBtn.appendChild(complete);
